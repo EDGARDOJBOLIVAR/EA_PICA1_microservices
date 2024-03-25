@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 
 from config import config
