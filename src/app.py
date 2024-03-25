@@ -12,7 +12,6 @@ CORS(app, resources={r"/user/*": {"origins": "http://localhost"}})
 
 connect = MySQL(app)
 
-
 @app.route("/user", methods=["GET"])
 def getUsers():
     try:
@@ -64,9 +63,11 @@ def page_not_found(error):
 if __name__ == "__main__":
     app.config.from_object(config["development"])
     app.register_error_handler(404, page_not_found)
-
+    
+    #Environment Variables
     SWAGGER_URL = app.config.get("SWAGGER_URL")
     API_URL = app.config.get("API_URL")
+    PORT = app.config.get("PORT")
 
     swaggerui_blueprint = get_swaggerui_blueprint(
         SWAGGER_URL,
@@ -76,4 +77,4 @@ if __name__ == "__main__":
 
     app.register_blueprint(swaggerui_blueprint)
 
-    app.run()
+    app.run(port=PORT)

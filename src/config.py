@@ -9,6 +9,7 @@ class DevelopmentConfig():
     MYSQL_DB = config('MYSQL_DB')
     SWAGGER_URL = config('SWAGGER_URL')
     API_URL = config('API_URL')
+    PORT = config('PORT')
 
 config = {
     'development': DevelopmentConfig
