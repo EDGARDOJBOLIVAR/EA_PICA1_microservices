@@ -1,15 +1,17 @@
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
-# from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
+import logging
 
 from config import config
 
 app = Flask(__name__)
+app.logger.setLevel(logging.ERROR)
+
 
 @app.errorhandler(Exception)
 def handle_exceptions(ex):
-    print(f'Error interno: {ex}')
+    app.logger.exception(f'Error interno: {ex}')
     return jsonify({'success': False, 'message': f'Error interno: {ex}'}), 500
 
 connect = MySQL(app)
