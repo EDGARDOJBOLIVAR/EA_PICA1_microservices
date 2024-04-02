@@ -10,6 +10,7 @@ class DevelopmentConfig():
     SWAGGER_URL = config('SWAGGER_URL')
     API_URL = config('API_URL')
     PORT = config('PORT')
+    HOST = config('HOST')
 
 config = {
     'development': DevelopmentConfig

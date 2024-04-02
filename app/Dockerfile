@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Establecer el directorio de trabajo en la carpeta src
 WORKDIR /app/src
 
-# Exponer el puerto 5000 para que esté disponible fuera del contenedor
 EXPOSE 9000
 
 # Ejecutar app.py cuando se inicie el contenedor
