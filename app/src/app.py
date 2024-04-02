@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
-from flask_cors import CORS
+# from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 
 from config import config
@@ -46,8 +46,8 @@ def create_user():
     )
     cursor.execute(sql)
     connect.connection.commit()  # Se confirma la transaccion en la BD
-    connect.connection.close()  # Se confirma la transaccion en la BD
-    return jsonify({"mensaje": "Usuarios registrado exitosamente"})
+    
+    return jsonify({"mensaje": "Usuario registrado exitosamente"}), 201
     
 
 
