@@ -22,3 +22,15 @@ docker exec -i ms-mysql mysql -u pica pica -p[password] -e "source /backup.sql"
 2. docker-compose up -d --build
 3. Create table:  
 docker exec -i ms-mysql mysql -u pica pica -p[password] -e "source /backup.sql"
+
+
+
+## Ejemplos
+- Consultar usuarios registrados  
+[Get] http://localhost:8080/user  
+![consulta usuarios](assets/image.png)
+
+
+- Crear usuario  
+[POST] http://localhost:8080/user/create
+![alt text](assets/image2.png)
