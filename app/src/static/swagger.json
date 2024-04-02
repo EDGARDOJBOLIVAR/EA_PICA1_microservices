@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Users application",
+    "description": "API for managing users.",
+    "version": "1.0.0",
+    "contact": {
+      "email": "danielcamacho_97@hotmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "Local server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Manage users",
+      "description": "Manage users pica"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "Obtiene la lista de usuarios.",
+        "responses": {
+          "200": {
+            "description": "Lista de usuarios obtenida exitosamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "ID del usuario."
+                          },
+                          "email": {
+                            "type": "string",
+                            "description": "Email del usuario."
+                          },
+                          "nombre": {
+                            "type": "string",
+                            "description": "Nombre del usuario."
+                          },
+                          "apellido": {
+                            "type": "string",
+                            "description": "Apellido del usuario."
+                          },
+                          "fecha": {
+                            "type": "string",
+                            "description": "Fecha de registro del usuario."
+                          }
+                        }
+                      }
+                    },
+                    "mensaje": {
+                      "type": "string",
+                      "description": "Mensaje indicando el resultado de la operación."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Manage users"]
+      }
+    },
+    "/user/create": {
+      "post": {
+        "summary": "Crea un nuevo usuario.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "Email del usuario."
+                  },
+                  "nombre": {
+                    "type": "string",
+                    "description": "Nombre del usuario."
+                  },
+                  "apellido": {
+                    "type": "string",
+                    "description": "Apellido del usuario."
+                  },
+                  "fecha": {
+                    "type": "string",
+                    "description": "Fecha de registro del usuario."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Usuario registrado exitosamente."
+          },
+          "400": {
+            "description": "Error al crear el usuario."
+          }
+        },
+        "tags": ["Manage users"]
+      }
+    }
+  }
+}
