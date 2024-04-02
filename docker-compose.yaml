@@ -5,6 +5,8 @@ services:
     build:
       context: ./app/
     container_name: ms-app
+    depends_on:
+      - ms-mysql
     # restart: always
     environment:
       MYSQL_HOST: ms-mysql
