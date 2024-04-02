@@ -2,6 +2,10 @@
 
 Este README documentará todos los pasos necesarios para poner en marcha esta aplicación.
 
+## Requisitos
+- docker 
+- docker compose (opcional)
+
 ## Pasos (manual)
 1. docker network create ms-network
 2. docker build -t ms-mysql ./docker/mysql/
