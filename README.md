@@ -21,7 +21,7 @@ docker exec -i ms-mysql mysql -u pica pica -p'AZ92adx!!!' -e "source /backup.sql
 1. docker network create ms-network
 2. docker-compose up -d --build
 3. Create table:  
-docker exec -i ms-mysql mysql -u pica pica -p'AZ92adx!!!' -e "source /backup.sql"
+docker exec -i ms-mysql mysql -u pica -D pica -p'AZ92adx!!!' -e "source /backup.sql"
 
 
 
