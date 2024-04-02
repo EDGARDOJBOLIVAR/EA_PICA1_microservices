@@ -39,28 +39,8 @@ services:
     networks:
       - ms-network
 
-  # db_pg:
-  #   build:
-  #     context: ./docker/postgres/
-  #   container_name: mpd-postgres
-  #   # restart: always
-  #   environment:
-  #     - POSTGRES_DB=customerservice
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=123456789.
-  #     - PGDATA=/var/lib/postgresql/data/pgdata
-  #   volumes:
-  #     - ./database_postgres:/var/lib/postgresql/data
-  #   ports:
-  #     - 5432:5432
-  #   networks:
-  #     - mpd-network
-
 volumes:
   database_mysql: {}
-  # database_postgres: {}
-  # database_metadata_repository: {}
-  # database_datawarehouse: {}
 
 networks:
   ms-network:
